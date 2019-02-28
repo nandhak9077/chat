@@ -32,6 +32,7 @@ usermodel.prototype.register = (body, callback) => {
         }
         else {
             const newUser = new user({
+                
                 "firstname": body.firstname,
                 "lastname": body.lastname,
                 "email": body.email,
@@ -39,11 +40,16 @@ usermodel.prototype.register = (body, callback) => {
             });
             newUser.save((err, result) => {
                 if (err) {
+                    console.log("error came");
                     console.log("error in model file", err);
                     return callback(err);
                 } else {
+                    console.log(body.firstname);
                     console.log("data save successfully", result);
-                    return callback(null, result);
+                    console.log("registered successfully");
+                    callback(null, result);
+                    console.log("no return statements ..registered successfully");
+                    
                 }
             })
         }
@@ -55,18 +61,22 @@ usermodel.prototype.login = (body, callback) => {
         if (err) {
             return callback(err);
         } else if (data.length > 0) {
-            bcrypt.compare(body.password, data[0].password, function (err, res) {
+            bcrypt.compare(body.password, data[0].password, (err, res)=> {
                 if (err) {
                     return callback(err);
                 } else if (res) {
                     console.log(data);
-
+                    console.log("congratz...!login successfully");
                     return callback(null, data);
                 } else {
+                    console.log("incorrect password please check it once ");
                     return callback("Incorrect password").status(500);
                 }
             });
         } else {
+            console.log(body.username);
+            console.log(body.password);
+            console.log("username is not in database please check it.")
             return callback("Invalid User ");
         }
     });

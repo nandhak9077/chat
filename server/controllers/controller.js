@@ -1,15 +1,10 @@
 var userService = require('../services/userService');
 var jwt = require('jsonwebtoken');
-//var gentoken = require('../middleware/tokens');
-//var sendmail=require('../middleware/sendmail');
 module.exports.register = (req, res) => {
-    console.log("reqest in controller==>",req);
-    
-     console.log("inside register");
      req.checkBody('firstname', 'Firstname is not valid').isLength({ min: 3 }).isAlpha();
      req.checkBody('lastname', 'Lastname is not valid').isLength({ min: 3 }).isAlpha();
      req.checkBody('email', 'Email is not valid').isEmail();
-     req.checkBody('password', 'password is not valid').isLength({ min: 4 }).equals(req.body.confirmPassword);
+     req.checkBody('password', 'password is not valid').isLength({ min: 4 }).equals(req.body.password);
      var errors = req.validationErrors();
      var response = {};
      if (errors) {
@@ -25,6 +20,7 @@ module.exports.register = (req, res) => {
                     message: err
                 })
             } else {
+                console.log(data);
                 return res.status(200).send({
                     message: data
                 });

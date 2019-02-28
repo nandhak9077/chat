@@ -43,22 +43,12 @@ const io = require('socket.io')(server);
 
 app.use('/', route); // calling router
 
-app.use(express.static('client'));
-
-
-
-const cors = require('cors');
-app.use(cors())
-
-
-// const server= http.createServer(app);
-// var io = socketIO(server);
-
+app.use(express.static('../client'))
 
 const dbConfig = require('./config/configurl');
 
 app.use(express.static('/home/bridgeit/Desktop/chatapplication/client/templates/login.html'));
-
+app.use(express.static('/home/bridgeit/Desktop/chatapplication/client/templates/register.html'));
 //connection to the mongo database
 mongoose.connect(dbConfig.url, {
     useNewUrlParser: true

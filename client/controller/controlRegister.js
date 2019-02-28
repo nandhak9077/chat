@@ -1,3 +1,4 @@
+
 app.controller('controlRegister', function ($scope, serviceRegister ) {
 
     // for registration form
@@ -7,14 +8,16 @@ app.controller('controlRegister', function ($scope, serviceRegister ) {
             'lastname': $scope.lastname,
             'email': $scope.email,
             'password': $scope.password,
-            'confirmPassword': $scope.confirmPassword
+            
         }
 
         console.log("register calling", user);
-        if ($scope.password != $scope.confirmPassword) {
-            $scope.message = "password and confirm password not match ";
+        if ($scope.password != $scope.password) {
+            $scope.message = "password does not match ";
         } else {
             serviceRegister.registerUser(user, $scope);
+            
+            location.href= "http://localhost:3000/#!/login";
         }
     }
 });
