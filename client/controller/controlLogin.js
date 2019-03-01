@@ -4,6 +4,8 @@ app.controller('controlLogin',function($scope,serviceLogin){
             'email':$scope.email,
             'password':$scope.password
         }
-        serviceLogin.login(data,$scope);
+         console.log(data);
+         
+        serviceLogin.login(data);
     }
 });

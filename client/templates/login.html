@@ -1,22 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="chatapp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script src="../controller/controlLogin.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link href="../css/main.css" rel="stylesheet">
-    <link href="/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
+    <!-- <link href="/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet"> -->
 </head>
-<body class="login">
-<!-- <div class="menu">
-<nav>
-    <title id="#"><strong>Chat App</strong></title>
-    <a href="#">Register</a>
-</nav>
-</div> -->
+<body ng-controller="controlLogin">
     <section id = main>
         <article>
             
@@ -60,7 +55,7 @@
 }
 #main{
     width: 332px;
-    margin: 30px auto;
+    margin: 30px auto;  
 background: white;
 padding: 20px;
 border-radius: 4px;

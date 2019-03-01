@@ -1,5 +1,5 @@
 
-app.controller('controlRegister', function ($scope, serviceRegister ) {
+app.controller('controlRegister', function ($scope, serviceRegister) {
 
     // for registration form
     $scope.register = function () {

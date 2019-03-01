@@ -20,13 +20,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Parses the text as JSON and exposes the resulting object on req.body.
 app.use(bodyParser.json());
 var expressValidator = require('express-validator')
-app.use(expressValidator());
+ app.use(expressValidator());
 
-//imporing socket io to get connection between client and server
-var socketIO = require('socket.io');
-//var chatController = require('./controller/chatController');
 
-// const server = http.createServer(app)
 
 const mongoose = require('mongoose');
 const route = require('../server/routes/route');
@@ -35,20 +31,15 @@ var server = app.listen(3000, () => {
     console.log("Server is listening to port 3000");
 })
 
-
-// const server = http.createServer(app);
-const io = require('socket.io')(server);
-
-
-
 app.use('/', route); // calling router
 
-app.use(express.static('../client'))
+app.use(express.static('/home/admin1/Desktop/chat application/chat/client'));
+mongoose.Promise=global.Promise;
 
 const dbConfig = require('./config/configurl');
 
-app.use(express.static('/home/bridgeit/Desktop/chatapplication/client/templates/login.html'));
-app.use(express.static('/home/bridgeit/Desktop/chatapplication/client/templates/register.html'));
+app.use(express.static('/home/admin1/Desktop/chat application/chat/client'));
+
 //connection to the mongo database
 mongoose.connect(dbConfig.url, {
     useNewUrlParser: true
