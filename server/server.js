@@ -4,11 +4,11 @@ const http = require('http');
 //which allows us to support HTTp protocol and socket.IO
 const express = require('express');
 const app = express();
-
+const cors = require('cors');
 // app.listen(3000, () => {
 //     console.log('Server started!');
 // });
-
+app.use(cors());
 /*body-parser parses your request and converts it into a 
 format from which you can easily extract relevant information that you may need.*/
 const bodyParser = require('body-parser');

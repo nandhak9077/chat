@@ -5,7 +5,7 @@ app.service('serviceRegister', function ($http, $location) {
         
         $http({
             method: 'POST',
-            url: 'http://localhost:3000/#!/register',
+            url: 'http://localhost:3000/register',
             data: data
 
         }).then(

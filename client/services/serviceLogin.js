@@ -4,7 +4,7 @@ app.service('serviceLogin', function ($http, $location) {
     this.login = function (data, $scope) {
         $http({
             method: 'POST',
-            url: 'http://localhost:3000/#!/login',
+            url: 'http://localhost:3000/login',
             data: data,
         }).then(
             function successCallback(response) {

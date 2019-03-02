@@ -17,7 +17,6 @@ app.controller('controlRegister', function ($scope, serviceRegister) {
         } else {
             serviceRegister.registerUser(user, $scope);
             
-            location.href= "http://localhost:3000/#!/login";
         }
     }
 });
