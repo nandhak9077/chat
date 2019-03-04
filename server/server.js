@@ -21,8 +21,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 var expressValidator = require('express-validator')
  app.use(expressValidator());
-
-
+//importing socketIO to get connection between client and server.
+var socketIO =require('socket.io');
+var chatController = require('./controllers/chatController');
 
 const mongoose = require('mongoose');
 const route = require('../server/routes/route');
@@ -30,6 +31,30 @@ const route = require('../server/routes/route');
 var server = app.listen(3000, () => {
     console.log("Server is listening to port 3000");
 })
+const io = require('socket.io')(server);
+//checking for events connection will be listening  for incoming sockets.
+io.on('connection',function(socket){
+    console.log("socket is connected");
+    //started listening events  and socket.on wait for the event.whenever that event is triggered to callback
+    //function is called
+    socket.on('createMessage',function(message){
+        //saving message to database
+        chatController.message(message,(err,data)=>{
+            if(err){
+                console.log("Error on message");
+                console.log(err);
+            }else {
+                console.log(message+ "in server");
+                //io.emmit is used to emit the message to all sockets connected to it.
+                io.emit('newMessageSingle',message);
+            }
+        })
+        //socket emit disconnect event which will be called whenever client disconnect
+        socket.on('disconnect',function(){
+            console.log("socket disconnected..!!!")
+        });
+    });
+});
 
 app.use('/', route); // calling router
 
@@ -48,4 +73,4 @@ mongoose.connect(dbConfig.url, {
 }).catch(err => {
     console.log("could not connect to the database");
     process.exit();
-});
+}); 
