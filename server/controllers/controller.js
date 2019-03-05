@@ -117,7 +117,7 @@ module.exports.resetPassword = (req, res) => {
         response.error = errors;
         return res.status(422).send(response);
     } else {
-        userService.register(req.body, (err, data) => {
+        userService.resetPassword(req.body, (err, data) => {
             if (err) {
                 console.log(err);
                 return res.status(500).send({

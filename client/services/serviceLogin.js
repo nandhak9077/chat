@@ -9,7 +9,7 @@ app.service('serviceLogin', function ($http, $location) {
         }).then(
             function successCallback(response) {
 
-                console.log("Login successfull ");
+                console.log("Login successfull at service");
                 var userid = response.data.message[0]._id;
                 var name = response.data.message[0].firstname;
                 var token = response.data.token;
@@ -17,7 +17,8 @@ app.service('serviceLogin', function ($http, $location) {
                 localStorage.setItem("name", name);
                 localStorage.setItem("token",token);
             
-                $scope.loginMessage = "login successfull";
+                // $scope.loginMessage = "login successful";
+                $location.path('/dashboard');
             },
             function errorCallback(response) {
 

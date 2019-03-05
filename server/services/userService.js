@@ -31,7 +31,7 @@ exports.forgotPassword = (req, callback) => {
 }
 //reset password
 exports.resetPassword = (req, callback) => {
-    userModel.register(req, (err, data) => {
+    userModel.resetPassword(req, (err, data) => {
         if (err) {
             return callback(err);
         } else {

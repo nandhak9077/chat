@@ -1,26 +1,12 @@
-<html>
+<html ng-app="chatapp">
 
 <head>
-    <!-- <link rel="stylesheet" href="../css/main.css" type="text/css" /> -->
+    <link rel="stylesheet" href="../css/main.css" type="text/css" />
     <link rel="stylesheet" href="../css/tri.css" type="text/css" />
 </head>
-<style>
-body{
-    height: 100%;
-    margin: 0;
-    background-image: url(https://html5up.net/uploads/demos/identity/assets/css/images/overlay.png),url(https://html5up.net/uploads/demos/identity/images/bg.jpg);
-    background-repeat: repeat,	no-repeat,	no-repeat;
-    background-size: 50px 100px, cover,	cover;
-    background-position: top left, center center,	bottom center;
-    background-attachment: fixed, fixed,	fixed; 
-    font-family: "source sans pro", Helvetica, sans-serif;
-    font-weight: 300;
-    height: 10%;
-}
 
-</style>
 
-<!-- <body ng-controller="chatControl" class="dashboard" >
+<body ng-controller="chatController" class="dashboard" >
     <header>
         <div class="topnav" id="myTopnav">
             <a href="#home" class="active" ui-sref="login">Sign out</a>
@@ -43,8 +29,8 @@ body{
             </ul>
             <p ng-repeat="x in allUser" ng-click="person(x)" ng-show="currUserName!=x.firstname">
                 {{x.firstname}}</p>
-                <!-- <a class="">{{getAllUsers}}</a> -->
-        <!-- </nav>
+                <a class="">{{getAllUsers}}</a>
+        </nav>
 
         <article>
 
@@ -58,8 +44,8 @@ body{
                             <p class="chatMsg"> {{chat.message}}</p>
                         </div>
                         <div class="chat self" ng-show="currUser == chat.senderUserId">
-                            <!-- <div class="user-photo"> <img src=""></div> -->
-                            <!-- <p class="chatMsg"> {{chat.message}}</p>
+                            <div class="user-photo"> <img src=""></div> -->
+                            <p class="chatMsg"> {{chat.message}}</p>
                         </div>
                     </div>
             </section>
@@ -74,36 +60,11 @@ body{
     </section>
    
 
-</body> --> --> -->
-<!-- wait--------------------------------------------------- -->
+</body> 
 
-<section id= main>
-    <article>
-      <main>
-        <form  style="border:1px solid #ccc">
-          <div class="container">
-            <h1><b>Register</b></h1>
-            <p>please fill in this form to create an account.</p>
-            <hr>
-            
-        
-            <div class="clearfix">
-              
-              <button type="submit" value="Sign up" ng-click="register()" ng-disabled="myForm.$invalid">Register</button>
-              
-            </div>
-            <p class="register-signup">Already have an account?
-                <!-- <a href="http://localhost:4000/#!/login">Sign in</a></span> </p> -->
-          </div>
-          
-        </form>
-      </main>
-    </article>
-  </section>
-  
 
 
 
 </html>
 
-<!-- dashboard -->
+

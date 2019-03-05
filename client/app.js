@@ -22,7 +22,7 @@ app.config(function($stateProvider, $urlRouterProvider){
     $stateProvider.state('resetPassword', {
         url: '/resetPassword',
         templateUrl: 'templates/resetPassword.html',
-        controller: 'controlRestPassword'
+        controller: 'controlResetPassword'
 
     })
     .state('dashboard',{

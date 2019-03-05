@@ -77,7 +77,7 @@ usermodel.prototype.login = (body, callback) => {
             console.log(body.username);
             console.log(body.password);
             console.log("username is not in database please check it.")
-            return callback("Invalid User ");
+            return callback("Invalid User");
         }
     });
 }
