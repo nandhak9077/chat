@@ -1,18 +1,14 @@
-var app = angular.module('chatapp',['ui.router']);
+var app = angular.module('chatapp', ['ui.router','btford.socket-io']);
 
-app.config(function($stateProvider, $urlRouterProvider){
+app.config(function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider.state('login', {
-        url: '/login',
-        templateUrl: 'templates/login.html',
-        controller: 'controlLogin'
+            url: '/login',
+            templateUrl: 'templates/login.html',
+            controller: 'controlLogin'
 
-    })
-    .state('register',{
-        url: '/register',
-        templateUrl: 'templates/register.html',
-        controller: 'controlRegister'
-    })
+        })
+        
     $stateProvider.state('forgotPassword', {
         url: '/forgotPassword',
         templateUrl: 'templates/forgotPassword.html',
@@ -20,24 +16,31 @@ app.config(function($stateProvider, $urlRouterProvider){
 
     })
     $stateProvider.state('resetPassword', {
-        url: '/resetPassword',
-        templateUrl: 'templates/resetPassword.html',
-        controller: 'controlResetPassword'
+            url: '/resetPassword',
+            templateUrl: 'templates/resetPassword.html',
+            controller: 'controlResetPassword'
 
-    })
-    .state('dashboard',{
-        url: '/dashboard',
-        templateUrl: 'templates/dashboard.html',
-        controller: 'chatController'
-    });
-    
-     $urlRouterProvider.otherwise('login');
+        })
+        .state('register', {
+            url: '/register',
+            templateUrl: 'templates/register.html',
+            controller: 'controlRegister'
+        })
 
-    
+        .state('dashboard', {
+            url: '/dashboard',
+            templateUrl: 'templates/dashboard.html',
+            controller: 'chatController'
+        });
+
+    $urlRouterProvider.otherwise('login');
+
+
 });
-app.service('SocketService', ['socketFactory', function SocketService(socketFactory){
-    return socketFactory({
-        ioSocket: io.connect('http://localhost:3000')  //connecting socket io
-    })
-}])
 
+
+app.service('SocketService', ['socketFactory', function SocketService(socketFactory) {
+    return socketFactory({
+        ioSocket: io.connect('http://localhost:3000') 
+    });
+}]);

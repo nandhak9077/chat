@@ -1,5 +1,5 @@
 var userService = require('../services/userService');
-var jwt = require('jsonwebtoken');
+var jwt=require('jsonwebtoken');
 var gentoken = require('../middleware/tokens');
 var sendmail = require('../middleware/sendmail');
 module.exports.register = (req, res) => {

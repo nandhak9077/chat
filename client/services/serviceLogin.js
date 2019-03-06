@@ -9,7 +9,7 @@ app.service('serviceLogin', function ($http, $location) {
         }).then(
             function successCallback(response) {
 
-                console.log("Login successfull at service");
+                console.log("Login successfull at serviceLogin in client side");
                 var userid = response.data.message[0]._id;
                 var name = response.data.message[0].firstname;
                 var token = response.data.token;

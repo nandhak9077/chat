@@ -61,7 +61,7 @@ app.controller('chatController', function ($scope, SocketService, $state, chatSe
     try {
         $scope.logout = function () {
             localStorage.clear();
-            $state.go('/login')//return back to login page
+            $state.go('login')//return back to login page//change panniruke /login
         }
     }
     catch (err) {

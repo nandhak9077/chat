@@ -58,12 +58,12 @@ io.on('connection',function(socket){
 
 app.use('/', route); // calling router
 
-app.use(express.static('/home/admin1/Desktop/chat application/chat/client'));
+app.use(express.static('../client'));
 mongoose.Promise=global.Promise;
 
 const dbConfig = require('./config/configurl');
 
-app.use(express.static('/home/admin1/Desktop/chat application/chat/client'));
+//app.use(express.static('/home/admin1/Desktop/chat application/chat/client'));
 
 //connection to the mongo database
 mongoose.connect(dbConfig.url, {

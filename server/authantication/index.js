@@ -6,7 +6,7 @@ var auth = function (req, res, next) {
     var token = req.headers["token"];
     console.log(token ,"token is in auth");
     var response = {
-        'message': "Unauthorised user "
+        'message': "Unauthorised user here "
     };
        jwt.verify(token, secret, function (err, decodedData) {
         if (err) {
