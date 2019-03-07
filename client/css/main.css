@@ -1,7 +1,8 @@
 body {
     height: 100%;
     margin: 0;
-    background-image: url(https://html5up.net/uploads/demos/identity/assets/css/images/overlay.png),url(https://html5up.net/uploads/demos/identity/images/bg.jpg);
+    background-color: rgb(235, 224, 224);
+    background-color: rgb(235, 224, 224);
     background-repeat: repeat,	no-repeat,	no-repeat;
     background-size: 50px 100px, cover,	cover;
     background-position: top left, center center,	bottom center;
