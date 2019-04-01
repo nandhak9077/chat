@@ -3,12 +3,7 @@ var mongoose = require('mongoose');
 var mongoSchema = mongoose.Schema;
 
 var chatSchema = new mongoSchema({
-    // 'senderUserId': { type: mongoSchema.Types.ObjectId, ref: 'user', required: [true, "Sender Id is required"] },
-    // 'senderName': { type: String, required: [true, "sender is required"] },
-    // 'reciverUserId': { type: mongoSchema.Types.ObjectId, ref: 'user', required: [true, "reciever id is required"] },
-    // 'reciverName': { type: String, required: [true, "reciver is required"] },
-    // 'message': { type: String, required: [true, "Message is required"] }
-
+    
     senderUserId: {
 type:String
 

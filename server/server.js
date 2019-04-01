@@ -5,9 +5,7 @@ const http = require('http');
 const express = require('express');
 const app = express();
 const cors = require('cors');
-// app.listen(3000, () => {
-//     console.log('Server started!');
-// });
+
 app.use(cors());
 /*body-parser parses your request and converts it into a 
 format from which you can easily extract relevant information that you may need.*/

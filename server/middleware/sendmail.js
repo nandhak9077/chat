@@ -5,7 +5,7 @@ exports.sendEMailFunction = (url,) => {
         service: 'gmail',
         auth: {
             user:'nandhak907@gmail.com',
-            pass:'suganyabala'
+            pass:''
         },
     });
     const mailOptions = {

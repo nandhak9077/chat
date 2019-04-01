@@ -19,7 +19,7 @@ module.exports.register = (req, res) => {
             if (err) {
                 console.log(err);
                 return res.status(500).send({
-                    message: err
+                     message: err
                 })
             } else {
                 console.log(data);
